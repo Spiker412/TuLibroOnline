@@ -1,0 +1,14 @@
+utp\edu\pe\util\SeguridadUtil.class
+utp\edu\pe\model\Usuario.class
+utp\edu\pe\config\Conexion.class
+utp\edu\pe\daoimpl\UsuarioDaoImpl.class
+utp\edu\pe\dao\LibrosDao.class
+utp\edu\pe\controller\UsuarioController.class
+utp\edu\pe\daoimpl\LibrosDaoImpl.class
+utp\edu\pe\config\Test.class
+utp\edu\pe\util\Validaciones.class
+utp\edu\pe\model\Libros.class
+utp\edu\pe\controller\CerrarSController.class
+utp\edu\pe\controller\LibrosController.class
+utp\edu\pe\util\FechaUtil.class
+utp\edu\pe\dao\UsuarioDao.class

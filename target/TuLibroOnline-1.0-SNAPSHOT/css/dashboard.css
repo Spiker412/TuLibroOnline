@@ -1,0 +1,136 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Encabezado */
+.header {
+  height: 60px;
+  width: 100%;
+  background-color: #2ecc71;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100; /* más alto que el sidebar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-right button {
+  margin-left: 5px;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  top: 60px; /* debajo del header */
+  left: 0;
+  background-color: rgba(144, 238, 144, 0.5);
+  padding: 1rem 0.5rem;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  z-index: 1000; /* debajo del header pero encima del contenido */
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: #000;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.sidebar a i {
+  font-size: 1.3rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.sidebar a:hover {
+  background-color: #76c776;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+  background-color: #76c776;
+}
+
+.sidebar .sidebar-text {
+  margin-left: 8px;
+  font-size: 1rem;
+}
+
+/* Contenido principal */
+.content {
+  position: absolute; 
+  top: 70px;             /* debajo del header */
+  left: 250px;           /* desde el borde izquierdo */
+  width: calc(100% - 320px); /* ancho restante */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: left 0.3s ease, width 0.3s ease;
+  overflow: visible; /* importante para que el modal no quede detrás */
+  z-index: 1; /* contenido por debajo del modal */
+}
+
+/* Cards/Tiles */
+.content .card {
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.content .card i {
+  color: #2ecc71;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Bootstrap Modal fix */
+.modal {
+  z-index: 2000 !important; /* aseguramos que esté sobre todo */
+}
+
+.modal-backdrop {
+  z-index: 1500 !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px; /* barra reducida */
+  }
+
+  .sidebar .sidebar-text {
+    display: none; /* solo íconos */
+  }
+
+  .content {
+    left: 80px;               /* ajusta al ancho reducido de la barra lateral */
+    width: calc(100% - 90px); /* ancho restante dinámico */
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    position: relative;       /* se vuelve relativo en móviles muy pequeños */
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+}
